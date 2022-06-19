@@ -12,4 +12,5 @@ FakeNewsNet
 ISOT
 ----
 1)ISOT_ML_Classifiers_TfiDF_Tokeniser.ipynb = This notebook includes the code of this file contains the model training code of different machine learning algorithms such as Random Forest, Xgboost, SVM, KNN, Naive Bayes and Logistic Regression algorithms trianed over ISOT dataset using TFIDF Tokeniser
+
 2)ISOT_ML_Classifiers_Pretrained_Word2Vec_Glove_Embeddings.ipynb = This notebook includes the code of this file contains the model training code of different machine learning algorithms such as Random Forest, Xgboost, SVM, KNN, Naive Bayes and Logistic Regression algorithms trianed over ISOT dataset using using pretrained Word2Vec and Glove Embeddings
