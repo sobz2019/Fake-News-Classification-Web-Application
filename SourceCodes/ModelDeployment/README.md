@@ -1,40 +1,105 @@
-#  Fake News📰 Classification WebApp using Python
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)                 
-[![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)   
+#  Fake News Classification Web Application using Python
 
-## [Follow us on Instagram for Machine Learning Guidelines & Path](https://www.instagram.com/machine_learning_hub.ai/)
-## [Buy Python & ML projects for students at lower rate](https://www.instamojo.com/kushalbhavsar1820)
+## Project Description
 
-### Sourcerer
-<a href="https://sourcerer.io/spidy20"><img src="https://avatars2.githubusercontent.com/u/42056100?v=4" height="50px" width="50px" alt=""/></a>
+The goal of this project is to create a graphical user interface (GUI) web application that could predict whether a news article is fake or not, by using trained models that have been trained over open-source datasets with the utilisation of Natural Language Processing (NLP) concepts based on the article text content.
 
-<img src="https://github.com/Spidy20/Fake_News_Detection/blob/master/fn.jpg">
+## Proposed Algorithms and Pretrained Models
 
-## [See the Tutorial of this Project](https://youtu.be/GS_ylghUtLQ)
+### Machine Learning Algorithms
 
-## Usage:-
+* Random Forest
+* SVM
+* KNN
+* XgBoost
+* Naive Bayes
+* Logistic Regression
 
-- Clone my repository.
-- Open CMD in working directory.
+
+### Deep Learning Algorithms
+
+* 1D CNN
+* LSTM
+* Bi-LSTM
+
+### Pretrained Models
+
+* Word2Vec = GoogleNews-vectors-negative300.bin
+* Glove = glove.6B.300d.txt
+* BERT = bert_en_uncased_L-12_H-768_A-12/1
+
+
+## Datasets
+* FakeNewsNet
+* ISOT
+* Fakeddit
+
+## Getting Started
+
+### Prerequisites
+
+This section describes the software and libraries which need to install in the server as prerequisites for the experiment.
+
+* Softwares
+
+    * Python 3.7
+    * Flask 2.1.2
+    * Anaconda Navigator
+
+* Python libraries
+
+    The list of the required libraries present in the file named `requirement.txt` . You can install these libraries with pip command as below:
+
+    `pip install -r requirements.txt`
+    
+
+### Folder Structure Description
+
+* Documents
+
+    This project directory  includes the architectural and design related files for the fake news automatic detection using machine learning and deep learning algorithms.
+
+* Source Codes
+
+    There are mainly 3 folders available in this directory 
+
+    * Experimental Codes
+
+       There are 3 subfolders within this directory, one for each dataset, which contain all the coding notebooks used to develop the model for automatic fake news detection over the respective datasets.
+
+       * FakeNewsNet
+       * ISOT
+       * Fakeddit
+       
+       Along with the coding notebooks in each folder dataset, 4 more subfolders present and the purpose for these 4 folders is described as follows:
+
+       * Embeddings -  Folder to store the downloaded pretrained embedding models 
+       * input_dataset - Folder to store the donwloaded datasets 
+       * outputs - Folder to store the trained model and its metric details
+       * Updated - Folder to store the filtered data of each dataset 
+     
+       For each dataset, we have experimented model development based on 4 different feature extraction techniques and created notebooks seperatly based on this.
+
+
+    * General Codes
+
+        This folder contains multiple coding notebooks which describes the general steps and scripts which we used in this experiment.These notebooks are arranged based on different phases of the machine learning model development done for the automatic fake news detection.
+
+    * Model Deployment
+
+        This folder represents the model deployment codes associated with the GUI web application developed for this project
+
+
+
+### Model Deployment Steps
+
+- Clone this repository.
+- Open Command Prompt from the working directory.
 - Run `pip install -r requirements.txt`
-- Open project in any IDE(Pycharm or VSCode)
-- Run `Fake_News_Det.py`, go to the `http://127.0.0.1:5000/`
-- If you want to build your model with the some changes, you can check the `Fake_News_Detection.ipynb`.
-- You can check web app is working fine. Sometimes predictions may be wrong.
-
-## Screenshots
-
-<img src="https://github.com/Spidy20/Fake_News_Detection/blob/master/s1.PNG">
-<img src="https://github.com/Spidy20/Fake_News_Detection/blob/master/s2.PNG">
-
-## Note
-- This project is just for learning purpose, don't think, it can do work in real time, because model was trained on historic & limited data.
-- For real time building of this kind of system, we need updated dataset and we need to build a model in particular interval of time, because news data can be updated in seconds, so our model should be also updated with the data.
+- Open the project from any IDE
+- Run `Fake_News_Det.py`
+- Go to the URL `http://127.0.0.1:5000/`
 
 
 
-## Just follow☝️ me and Star⭐ my repository 
 
-# [Buy me a Coffee☕](https://www.buymeacoffee.com/spidy20)
-## [Donate me on PayPal(It will inspire me to do more projects)](https://www.paypal.me/spidy1820)
-## Donate me on GPAY:- kushalbhavsar58-1@okaxis
