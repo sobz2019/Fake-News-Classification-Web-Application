@@ -2,7 +2,7 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Fake News📰 Detection System</title>
+  <title>Fake News Detection</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
@@ -13,19 +13,26 @@
 
 <body>
  <div class="login">
-	<h1>Fake News📰  Detector</h1>
+	<h1>Fake News Detection</h1>
 
     <form action="{{ url_for('predict')}}" method="POST">
     	<textarea  name="message" rows="6" cols="50" required="required" style="font-size: 18pt"></textarea>
+		<br> </br>
+		<div><select name="mdlselect"> <option value="RF">Random Forest</option>
+			<option value="SVM">SVM</option>
+			<option value="KNN">KNN</option>
+            <option value="XG">XgBoost</option>
+            <option value="NB">Naive Bayes</option>
+            <option value="LR">Logistic Regression</option></select></div>
 		<br> </br>
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
 
         	<div class="results">
 
-	{% if prediction == ['FAKE']%}
-	<h2 style="color:red;">Looking Spam⚠️News📰 </h2>
-	{% elif prediction == ['REAL']%}
-				<h2 style="color:green;"><b>Looking Real News📰</b></h2>
+	{% if prediction == [1]%}
+	<h2 style="color:red;">Fake News Detected </h2>
+	{% elif prediction == [0]%}
+				<h2 style="color:green;"><b>Real News</b></h2>
 	{% endif %}
 
 	</div>
