@@ -1,42 +1,161 @@
 <!DOCTYPE html>
 <html >
 <head>
+  <meta charset="UTF-8"><!DOCTYPE html>
+<html >
+<head>
   <meta charset="UTF-8">
   <title>Fake News Detection</title>
-  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
+<!-- Load an icon library -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <script type="text/javascript" src="dynamic.js"></script> -->
 </head>
 
 <body>
  <div class="login">
-	<h1>Fake News Detection</h1>
-
-    <form action="{{ url_for('predict')}}" method="POST">
-    	<textarea  name="message" rows="6" cols="50" required="required" style="font-size: 18pt"></textarea>
-		<br> </br>
-		<div><select name="mdlselect"> <option value="RF">Random Forest</option>
-			<option value="SVM">SVM</option>
-			<option value="KNN">KNN</option>
-            <option value="XG">XgBoost</option>
-            <option value="NB">Naive Bayes</option>
-            <option value="LR">Logistic Regression</option></select></div>
-		<br> </br>
+    
+	<table style="background-color: #37d29d;width: 100%;">
+			<tr>
+				<td><a href="home.html"> 
+				</a></td>
+				<td>
+					<h1 style="padding-left: 30px;font-size:30px;">FakeNews Detection Platform
+					</h1>
+				</td>
+			</tr>
+		</table>
+	<div>
+	
+	<h1 style="text-align: center;font-size:20px;">Machine Learning Web Application for Fake News Detection
+					</h1>
+	</div>
+    <form action="{{ url_for('predict')}}" method="POST" style="padding:53px">
+    <tr>
+	<td>
+		<div>
+	<textarea  name="message" rows="8" cols="50" required="required" style="font-size: 11pt; width: 1595px; height: 234px"></textarea>
+		</div>	
+		</td>
+     </tr>
+	 
+	 <tr>
+	 <td>
+	 <div style="display:flex;">
+	 <td>
+	 
+		<div class="pageElement"><select name="Dataset" id="main_menu" class="custom-select" style="height: 50px;text-align-last: center;"> 
+		    <option value="none" selected disabled hidden>&emsp;&emsp;&emsp;Select Dataset Option</option>
+			<option value="FakeNewsNet">FakeNewsNet&emsp;&emsp;&emsp;</option>
+			<option value="ISOT">ISOT&emsp;&emsp;&emsp;</option>
+			<option value="FAKEDDIT">FAKEDDIT&emsp;&emsp;&emsp;</option>
+            
+		</select></div></td>
+		
+		<td>
+<div>
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
-
+</div>		
+		
+		
+		</td>
+		
+		
+		<td>
+			<div class="pageElement"><select name="mdlselect" id="sub_menu" class="custom-select" style="height: 50px;text-align-last: center;"> 
+		    <option value="none" selected disabled hidden>&emsp;&emsp;&emsp;Select Model Option</option>
+			<!-- <option value="LSTM">LSTM&emsp;&emsp;&emsp;[Accuracy(99%)]</option>
+			<option value="BILSTM">BILSTM&emsp;&emsp;&emsp;[Accuracy(99%)]</option>
+			<option value="CNN">CNN&emsp;&emsp;&emsp;[Accuracy(99%)]</option>
+			<option value="XG">XgBoost&emsp;&emsp;&emsp;[Accuracy(98%)]</option>
+			<option value="KNN">KNN&emsp;&emsp;&emsp;[Accuracy(98%)]</option>
+			<option value="SVM">SVM&emsp;&emsp;&emsp;[Accuracy(98%)]</option>
+			<option value="RF">Random Forest&emsp;&emsp;&emsp;[Accuracy(94%)]</option>
+			<option value="LR">Logistic Regression&emsp;&emsp;[Accuracy(92%)]</option>
+            <option value="NB">Naive Bayes&emsp;&emsp;&emsp;[Accuracy(92%)]</option> -->
+            
+			</select></div>
+		
+		
+		</td>
+		</div>
+		</td>
+		</tr>		
+		
+		<tr>
+		<td>
+		
         	<div class="results">
 
 	{% if prediction == [1]%}
-	<h2 style="color:red;">Fake News Detected </h2>
+	<h2 style="color:red;text-align: center;">Fake News Detected </h2>
+	{% elif prediction == 1%}
+	<h2 style="color:red;text-align: center;">Fake News Detected </h2>
 	{% elif prediction == [0]%}
-				<h2 style="color:green;"><b>Real News</b></h2>
+				<h2 style="color:green;text-align: center;"><b>Real News</b></h2>
+	{% elif prediction == 0%}
+				<h2 style="color:green;text-align: center;"><b>Real News</b></h2>
 	{% endif %}
 
 	</div>
+	
+	</td>
+</tr>
 
     </form>
 
 </div>
+<script>
+$("#main_menu").change(function() {
+   switch ($(this).val()) {
+     case "FakeNewsNet":
+        alert("Model Accuracy Details :-\n------------------------\nLSTM - Accuracy(87%)\nCNN - Accuracy(87%)\nBiLSTM - Accuracy(87%)\nXgBoost - Accuracy(83%)\nKNN - Accuracy(83%)\nRandomForest - Accuracy(82%)\nSVM - Accuracy(81%)\nLogisticRegression - Accuracy(81%)\nNaiveBayes - Accuracy(78%)");
+        break;
+     case "ISOT":
+        alert("Model Accuracy Details :-\n------------------------\nLSTM - Accuracy(99%)\nBiLSTM - Accuracy(99%)\nCNN - Accuracy(99%)\nXgBoost - Accuracy(98%)\nKNN - Accuracy(98%)\nSVM - Accuracy(98%)\nRandomForest - Accuracy(94%)\nLogisticRegression - Accuracy(92%)\nNaiveBayes - Accuracy(92%)");
+        break;
+     case "FAKEDDIT":
+        alert("Model Accuracy Details :-\n------------------------\nCNN - Accuracy(91%)\nLSTM - Accuracy(91%)\nBiLSTM - Accuracy(91%)\nSVM - Accuracy(87%)\nXgBoost - Accuracy(85%)\nRandomForest - Accuracy(83%)\nLogisticRegression - Accuracy(83%)\nKNN - Accuracy(81%)\nNaiveBayes - Accuracy(58%)");
+        break;
+   }
+});
+
+var dataset={
+FakeNewsNet:['CNN','LSTM','BiLSTM','XgBoost','KNN','RandomForest','SVM','LogisticRegression','NaiveBayes'],
+ISOT:['LSTM','BiLSTM','CNN','XgBoost','KNN','SVM','RandomForest','LogisticRegression','NaiveBayes'],
+FAKEDDIT:['CNN','LSTM','BiLSTM','SVM','XgBoost','RandomForest','LogisticRegression','KNN','NaiveBayes']
+}
+
+
+var main = document.getElementById('main_menu');
+var sub = document.getElementById('sub_menu');
+
+
+main.addEventListener('change',function(){
+
+var selected_option =dataset[this.value];
+
+while(sub.options.length > 0){
+
+	sub.options.remove(0);
+}
+
+Array.from(selected_option).forEach(function(el){
+
+ let option = new Option(el,el);
+ 
+ sub.appendChild(option);
+
+});
+
+});
+</script>
+</body>
