@@ -98,7 +98,7 @@ This section describes the software and libraries which need to install in the s
 - Run `pip install -r requirements.txt`
 - Open the project from any IDE
 - Run `Fake_News_Det.py`
-- Go to the URL `http://127.0.0.1:5000/`
+- Go to the URL `http://127.0.0.1:5100/`
 
 
 
