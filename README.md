@@ -18,7 +18,7 @@ The goal of this project is to create a graphical user interface (GUI) web appli
 
 ### Deep Learning Algorithms
 
-* 1D CNN
+* CNN
 * LSTM
 * Bi-LSTM
 
@@ -26,7 +26,11 @@ The goal of this project is to create a graphical user interface (GUI) web appli
 
 * Word2Vec = GoogleNews-vectors-negative300.bin
 * Glove = glove.6B.300d.txt
-* BERT = bert_en_uncased_L-12_H-768_A-12/1
+* BERT 
+   * Traditional Machine Learning Approach
+            - bert_en_uncased_L-12_H-512_A-8/2
+  * Deep Learning Approach
+            - bert_en_uncased_L-12_H-768_A-12/1
 
 
 ## Datasets
